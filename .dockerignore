@@ -1,0 +1,40 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Build output
+.next
+out
+build
+
+# Git and IDE
+.git
+.gitignore
+.idea
+.vscode
+.cursor
+*.md
+
+# Env and secrets (mount or pass at run time)
+.env*
+!.env.example
+
+# Data and DB (mount a volume at runtime)
+data
+*.db
+*.db-journal
+
+# Debug and misc
+.DS_Store
+Thumbs.db
+*.log
+*.tsbuildinfo
+next-env.d.ts
+.vercel
+coverage

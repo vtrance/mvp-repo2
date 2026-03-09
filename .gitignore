@@ -22,7 +22,18 @@
 
 # misc
 .DS_Store
+Thumbs.db
 *.pem
+
+# IDE / editor (optional: remove if you want to commit shared settings)
+.idea
+.vscode
+.cursor
+
+# sqlite / data
+/data/
+*.db
+*.db-journal
 
 # debug
 npm-debug.log*
@@ -30,8 +41,9 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files (allow .env.example to be committed as a template)
 .env*
+!.env.example
 
 # vercel
 .vercel
