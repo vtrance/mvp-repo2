@@ -2,6 +2,8 @@ import { db } from "@/db";
 import { studyCollections } from "@/db/schema";
 import { StudiesTable, type StudyCollectionRow } from "./StudiesTable";
 
+export const dynamic = "force-dynamic";
+
 async function getStudyCollections(): Promise<StudyCollectionRow[]> {
   const rows = await db.select().from(studyCollections);
   return rows;

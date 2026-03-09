@@ -3,6 +3,8 @@ import { studyCollections, analyses } from "@/db/schema";
 import { StudiesTable, type StudyCollectionRow } from "../studies/StudiesTable";
 import { like, or, inArray } from "drizzle-orm";
 
+export const dynamic = "force-dynamic";
+
 async function getSearchResults(
   q: string | undefined
 ): Promise<StudyCollectionRow[]> {

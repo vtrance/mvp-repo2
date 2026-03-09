@@ -1,4 +1,4 @@
-import path from "path";
+//import path from "path";
 import { defineConfig } from "drizzle-kit";
 
 export default defineConfig({
@@ -6,6 +6,7 @@ export default defineConfig({
   out: "./drizzle",
   dialect: "sqlite",
   dbCredentials: {
-    url: process.env.DATABASE_URL ?? path.join(process.cwd(), "data", "local.db"),
+    url: "/data/local.db",
+    //url: process.env.DATABASE_URL ?? path.join(process.cwd(), "data", "local.db"),
   },
 });

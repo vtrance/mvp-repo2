@@ -3,6 +3,8 @@ import { db } from "@/db";
 import { biobanks, studyBiobanks } from "@/db/schema";
 import { count, eq } from "drizzle-orm";
 
+export const dynamic = "force-dynamic";
+
 async function getBiobankStudyCounts() {
   const rows = await db
     .select({

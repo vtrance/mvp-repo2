@@ -26,9 +26,9 @@ build
 !.env.example
 
 # Data and DB (mount a volume at runtime)
-data
-*.db
-*.db-journal
+#data
+#*.db
+#*.db-journal
 
 # Debug and misc
 .DS_Store

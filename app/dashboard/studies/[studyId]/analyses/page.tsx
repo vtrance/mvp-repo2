@@ -5,6 +5,8 @@ import { eq, inArray } from "drizzle-orm";
 import { notFound } from "next/navigation";
 import { AnalysesTable } from "./AnalysesTable";
 
+export const dynamic = "force-dynamic";
+
 type PageProps = {
   params: Promise<{ studyId: string }>;
 };
