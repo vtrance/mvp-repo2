@@ -31,9 +31,9 @@ Thumbs.db
 .cursor
 
 # sqlite / data
-/data/
-*.db
-*.db-journal
+#/data/
+#*.db
+#*.db-journal
 
 # debug
 npm-debug.log*
