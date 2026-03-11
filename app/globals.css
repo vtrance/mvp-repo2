@@ -93,13 +93,13 @@ h6 {
 #elgg-main-content,
 #elgg-nav-list {
     vertical-align: top;
-    background-color: #fff
+    background-color: #ebebeb; /*#fff*/
 }
 
 #elgg-nav-list {
-    width: 300px;
+    width: 100%; /*300px;*/
     border-right: 1px solid #ebebeb;
-    min-height: 100vh;
+    min-height: auto; /*100vh;*/
     float: none;
     visibility: visible;
     padding: 15px 0
