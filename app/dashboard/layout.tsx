@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function DashboardLayout({
   children,
@@ -6,32 +7,47 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
-      <header className="border-b border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
-        <div className="mx-auto flex h-14 max-w-7xl items-center gap-6 px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/dashboard"
-            className="text-lg font-semibold text-zinc-900 dark:text-zinc-50"
-          >
-            Dashboard
-          </Link>
-          <nav className="flex gap-4">
-            <Link
-              href="/dashboard/studies"
-              className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
-            >
-              Search/Browse Studies
-            </Link>
-            <Link
-              href="/dashboard/study-search"
-              className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
-            >
-              Study search
-            </Link>
-          </nav>
+    <div className="min-h-screen flex bg-zinc-50 dark:bg-black font-sans">
+      <aside className="min-w-[230px] w-64 shrink-0 border-r border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900 pt-0 pb-4 px-0">
+        <div className="flex h-full flex-col">
+          {/* Top section: logo */}
+          <div className="mb-0 flex justify-center bg-[#4F5E6B] py-3">
+            <Image
+              src="/sidebar-logo.png"
+              alt="VA Research Biobank"
+              width={160}
+              height={40}
+              className="h-auto w-auto"
+            />
+          </div>
+
+          {/* Rest of sidebar */}
+          <div className="flex-1 bg-[#2F4050]">            
+            <nav className="space-y-2 text-sm">
+              <Link
+                href="/dashboard"
+                className="block text-zinc-700 hover:text-black dark:text-zinc-300 dark:hover:text-white"
+              >
+                Overview
+              </Link>
+              <Link
+                href="/dashboard/studies"
+                className="block text-zinc-700 hover:text-black dark:text-zinc-300 dark:hover:text-white"
+              >
+                Studies
+              </Link>
+              <Link
+                href="/dashboard/study-search"
+                className="block text-zinc-700 hover:text-black dark:text-zinc-300 dark:hover:text-white"
+              >
+                Study search
+              </Link>
+            </nav>
+          </div>
         </div>
-      </header>
-      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      </aside>
+
+      <main className="flex-1 p-4 bg-[#EBEBEB]">
         {children}
       </main>
     </div>

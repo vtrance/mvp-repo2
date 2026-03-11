@@ -21,10 +21,22 @@ export default async function DashboardPage() {
   const studyCountData = await getBiobankStudyCounts();
 
   return (
-    <div className="space-y-8">
-      <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-        VA Research Biobank
-      </h1>
+    <div className="space-y-6 pl-4">
+      <div className="elgg-head">
+        {/*<h2 className="inline-block h-[26px] pb-[0.4em] font-['Arial'] text-[28px] font-bold leading-[0.9em] text-[#555] tracking-normal">*/}
+        <h2 className="h2">
+          VA MVP Research Biobank - Overview
+        </h2>
+      </div>
+
+      <div id="elgg-nav-list">
+            <div className="navbar">
+                <h3 className="h3">
+                  <Link href="/dashboard" className="navbar-link">Overview</Link> | 
+                  <Link href="/dashboard/studies" className="navbar-link"> Search/Browse Studies</Link> 
+                </h3>
+            </div>
+      </div>
 
       <section>
         <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
@@ -42,17 +54,25 @@ export default async function DashboardPage() {
             studyCountData.map((row) => (
               <article
                 key={row.biobankName}
-                className="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm transition-shadow hover:shadow dark:border-zinc-700 dark:bg-zinc-900"
+                className="flex flex-col items-center justify-center rounded-lg border border-zinc-200 bg-white p-5 shadow-sm transition-shadow hover:shadow dark:border-zinc-700 dark:bg-zinc-900 w-64 h-50"
               >
-                <h3 className="text-lg text-center font-semibold text-zinc-900 dark:text-zinc-50">
-                  {row.biobankName}
-                </h3>
+
                 <p className="mt-2 text-2xl text-center font-bold tabular-nums text-zinc-700 dark:text-zinc-300">
+                  {row.studyCount}
+                  {/*<span className="ml-1 text-sm font-normal text-zinc-500 dark:text-zinc-400">
+                    {row.studyCount === 1 ? "study" : "studies"}
+                  </span>*/}
+                </p>
+
+                <h4 className="text-lg text-center font-semibold text-zinc-900 dark:text-zinc-50">
+                  {row.biobankName}
+                </h4>
+                {/*<p className="mt-2 text-2xl text-center font-bold tabular-nums text-zinc-700 dark:text-zinc-300">
                   {row.studyCount}
                   <span className="ml-1 text-sm font-normal text-zinc-500 dark:text-zinc-400">
                     {row.studyCount === 1 ? "study" : "studies"}
                   </span>
-                </p>
+                </p>*/}
               </article>
             ))
           )}

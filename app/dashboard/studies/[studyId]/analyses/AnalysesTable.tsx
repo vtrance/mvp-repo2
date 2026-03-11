@@ -49,7 +49,7 @@ function getColumns(studyId: number): ColumnDef<AnalysisRow>[] {
         const viewHref = `/dashboard/studies/${studyId}/analyses/${analysisId}`;
         return (
           <span className="flex flex-wrap items-center gap-2">
-            {fileName ? (
+            {/*{fileName ? (
               <a
                 href={fileName}
                 className="font-medium text-zinc-900 underline hover:no-underline dark:text-zinc-50"
@@ -59,7 +59,7 @@ function getColumns(studyId: number): ColumnDef<AnalysisRow>[] {
             ) : (
               <span className="text-zinc-500 dark:text-zinc-400">Download</span>
             )}
-            <span className="text-zinc-400 dark:text-zinc-500">|</span>
+            <span className="text-zinc-400 dark:text-zinc-500">|</span>*/}
             <a
               href={viewHref}
               className="font-medium text-zinc-900 underline hover:no-underline dark:text-zinc-50"

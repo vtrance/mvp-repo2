@@ -93,42 +93,73 @@ export default async function StudyAnalysesPage({ params }: PageProps) {
   if (!data) notFound();
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 pl-4">
+      
+      <div className="elgg-head">
+        {/*<h2 className="inline-block h-[26px] pb-[0.4em] font-['Arial'] text-[28px] font-bold leading-[0.9em] text-[#555] tracking-normal">*/}
+        <h2 className="h2">
+            VA MVP Research Biobank - View Study
+        </h2>
+      </div>
+
+      <div id="elgg-nav-list">
+            <div className="navbar">
+                <h3 className="h3">
+                  <Link href="/dashboard" className="navbar-link">Overview</Link> | 
+                  <Link href="/dashboard/studies" className="navbar-link"> Search/Browse Studies</Link> 
+                </h3>
+            </div>
+      </div>
+
       <div>
         <Link
           href="/dashboard/studies"
           className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
         >
-          ← Studies
+          ← Back
         </Link>
+      </div>
+      
         <div className="mt-2 grid grid-cols-1 gap-6 sm:grid-cols-2">
           <div className="space-y-1 text-sm">
-            <p className="text-zinc-900 dark:text-zinc-50">
-              <span className="font-medium text-zinc-600 dark:text-zinc-400">Study Name:</span>{" "}
-              {data.studyName ?? "—"}
+            <p>
+              {/*<span className="font-medium text-zinc-600 dark:text-zinc-400">Study Name:</span>{" "}*/}
+              <span className="elgg-field-label">Study Name:</span>{" "}
+              <span className="elgg-field-value">
+                {data.studyName ?? "—"}
+              </span>
             </p>
-            <p className="text-zinc-900 dark:text-zinc-50">
-              <span className="font-medium text-zinc-600 dark:text-zinc-400">Collection:</span>{" "}
-              {data.collections ?? "—"}
+            <p>
+              {/*<span className="font-medium text-zinc-600 dark:text-zinc-400">Collection:</span>{" "}*/}
+              <span className="elgg-field-label">Collection:</span>{" "}
+              <span className="elgg-field-value">
+                {data.collections ?? "—"}
+              </span>
             </p>
           </div>
           <div className="space-y-1 text-sm">
-            <p className="text-zinc-900 dark:text-zinc-50">
-              <span className="font-medium text-zinc-600 dark:text-zinc-400">Last Updated:</span>{" "}
-              {data.updatedAt ?? "—"}
+            <p>
+              <span className="elgg-field-label">Last Updated:</span>{" "}
+              <span className="elgg-field-value">
+                {data.updatedAt ?? "—"}
+              </span>
             </p>
-            <p className="text-zinc-900 dark:text-zinc-50">
-              <span className="font-medium text-zinc-600 dark:text-zinc-400">Study PI:</span>{" "}
-              {data.piNames ?? "—"}
+            <p>
+              <span className="elgg-field-label">Study PI:</span>{" "}
+              <span className="elgg-field-value">
+                {data.piNames ?? "—"}
+              </span>
             </p>
           </div>
         </div>
-        <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+        {/*<p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
           Analysis PMID and description for this study.
-        </p>
-      </div>
-
+        </p>*/}
+        
+      
+          
       <AnalysesTable data={data.analyses} studyId={studyId} />
+      
     </div>
   );
 }

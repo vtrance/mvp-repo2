@@ -8,8 +8,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: /*var(--font-geist-sans)*/ Arial, Helvetica, sans-serif;
+  --font-mono: /*var(--font-geist-mono)*/ Arial, Helvetica, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,3 +24,93 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+.elgg-head>h2,
+.elgg-heading-main {
+  display: inline-block;
+  height: 26px;
+  padding-bottom: 0.4em;
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 0.9em;
+  color: #555;
+  /*letter-spacing: -0.025em;*/ /* Tailwind’s tracking-tight */
+}
+
+.elgg-table th,
+.elgg-table-alt th {
+    background-color: #DCE4EF;
+    color: #333333;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.elgg-table-header>div>* {
+    padding: .5em 0
+}
+
+.elgg-table-alt .middle {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%
+}
+
+.elgg-field-label {
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  padding-bottom: .25em;
+}
+
+.elgg-field>input .elgg-field>textarea {
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+}
+
+#elgg-nav-list .elgg-subtext,
+#elgg-nav-list a,
+#elgg-nav-list h1,
+#elgg-nav-list h2,
+#elgg-nav-list h3,
+#elgg-nav-list h4,
+#elgg-nav-list h5,
+#elgg-nav-list h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+    padding-bottom: 1px;
+}
+
+#elgg-main-content,
+#elgg-nav-list {
+    vertical-align: top;
+    background-color: #fff
+}
+
+#elgg-nav-list {
+    width: 300px;
+    border-right: 1px solid #ebebeb;
+    min-height: 100vh;
+    float: none;
+    visibility: visible;
+    padding: 15px 0
+}
+
+#elgg-nav-list>.elgg-main {
+    padding: 3px 5px;
+    position: relative
+}
+
+#elgg-nav-list .elgg-head {
+    padding-bottom: 10px
+}
+
